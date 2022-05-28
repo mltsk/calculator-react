@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 
-import styles from './CalculatorContainer.module.scss';
+import styles from './Container.module.scss';
 
-interface ICalculatorContainer {
+interface IContainer {
   children: ReactNode;
 }
 
-const CalculatorContainer = ({ children }: ICalculatorContainer) => {
+const Container = ({ children }: IContainer) => {
   return (
     <div className={styles.wrapper}>
       <section className={styles.calculator}>{children}</section>
@@ -14,4 +14,4 @@ const CalculatorContainer = ({ children }: ICalculatorContainer) => {
   );
 };
 
-export default CalculatorContainer;
+export default Container;

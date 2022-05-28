@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 
-import { ButtonType } from '../../ts/enums';
+import { ButtonType } from '../../../ts/enums';
 
 import styles from './Button.module.scss';
 

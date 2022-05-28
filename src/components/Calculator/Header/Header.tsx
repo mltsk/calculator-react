@@ -1,13 +1,13 @@
 import React from 'react';
 
-import styles from './CalculatorHeader.module.scss';
+import styles from './Header.module.scss';
 
-interface ICalculatorHeader {
+interface IHeader {
   calculation: string | null | undefined;
   result: string | null;
 }
 
-const CalculatorHeader = ({ calculation, result }: ICalculatorHeader) => {
+const Header = ({ calculation, result }: IHeader) => {
   return (
     <div className={styles.header}>
       <span className={styles.calculation} data-testid="calculation">
@@ -20,4 +20,4 @@ const CalculatorHeader = ({ calculation, result }: ICalculatorHeader) => {
   );
 };
 
-export default CalculatorHeader;
+export default Header;

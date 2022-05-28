@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BUTTONS } from '../../constants/constants';
+import { BUTTONS } from '../../../constants/constants';
 import Button from '../Button/Button';
 
 import styles from './Controls.module.scss';

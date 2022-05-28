@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import { KEYS, SPECIAL_BUTTONS, SPECIAL_KEYS } from '../../constants/constants';
 import runCalculation from '../../helpers/runCalculation';
-import CalculatorContainer from '../CalculatorContainer/CalculatorContainer';
-import CalculatorHeader from '../CalculatorHeader/CalculatorHeader';
-import Controls from '../Controls/Controls';
+import Container from '../Calculator/Container/Container';
+import Controls from '../Calculator/Controls/Controls';
+import Header from '../Calculator/Header/Header';
 import Layout from '../Layout/Layout';
 
 function App() {
@@ -61,10 +61,10 @@ function App() {
 
   return (
     <Layout>
-      <CalculatorContainer>
-        <CalculatorHeader calculation={calculation} result={result} />
+      <Container>
+        <Header calculation={calculation} result={result} />
         <Controls handlerClick={handlerClick} />
-      </CalculatorContainer>
+      </Container>
     </Layout>
   );
 }
