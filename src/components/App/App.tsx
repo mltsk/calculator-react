@@ -40,10 +40,14 @@ function App() {
       setCalculation((prev) => (prev ? prev + event.key : event.key));
     } else if (event.key === SPECIAL_KEYS.ENTER) {
       event.preventDefault();
-      console.log('calculation...');
+      if (calculation) {
+        const result = runCalculation(calculation);
+
+        setResult(result);
+      }
     } else if (event.key === SPECIAL_KEYS.ESCAPE) {
       setCalculation(null);
-      setResult(0);
+      setResult('0');
     }
   };
 
@@ -59,7 +63,7 @@ function App() {
     <Layout>
       <CalculatorContainer>
         <CalculatorHeader calculation={calculation} result={result} />
-        <Controls setCalculation={setCalculation} />
+        <Controls handlerClick={handlerClick} />
       </CalculatorContainer>
     </Layout>
   );
