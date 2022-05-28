@@ -6,12 +6,10 @@ import Button from '../Button/Button';
 import styles from './Controls.module.scss';
 
 class IControls {
-  setCalculation!: React.Dispatch<
-    React.SetStateAction<string | null | undefined>
-  >;
+  handlerClick!: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Controls = ({ setCalculation }: IControls) => {
+const Controls = ({ handlerClick }: IControls) => {
   return (
     <div className={styles.controls}>
       {BUTTONS.map(({ value, type }) => (
@@ -19,7 +17,7 @@ const Controls = ({ setCalculation }: IControls) => {
           key={value}
           value={value}
           type={type}
-          setCalculation={setCalculation}
+          handlerClick={handlerClick}
         />
       ))}
     </div>
