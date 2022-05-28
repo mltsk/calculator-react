@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  background: #ffffff20;
+  border-radius: 18px;
+
+  @media screen and (max-width: 650px) {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+.calculator {
+  width: 552px;
+  margin: 38px 31px;
+  padding: 46px;
+  background: linear-gradient(155.23deg, #28518e 0%, #3a77d1 100%);
+  box-shadow:
+    0 82px 158px rgb(0 0 0 / 35%),
+    0 24.7206px 47.6324px rgb(0 0 0 / 22.8%),
+    0 10.2677px 19.7841px rgb(0 0 0 / 17.5%),
+    0 3.7136px 7.1555px rgb(0 0 0 / 12.2%);
+  border-radius: 18px;
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+    min-height: 100vh;
+    padding: 46px 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+}

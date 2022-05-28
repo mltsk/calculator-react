@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: Geometria, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 88px;
+  cursor: pointer;
+
+  &:disabled {
+    color: rgb(161 161 161);
+  }
+
+  &:hover {
+    background-color: #ffffff12;
+  }
+}
+
+.result {
+  color: #2b589a;
+  background-color: white;
+}
+
+.result:hover {
+  background-color: #ffffff90;
+}

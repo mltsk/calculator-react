@@ -37,10 +37,8 @@
   "rules": {
     "class-methods-use-this": "off",
     "no-mixed-spaces-and-tabs": "off",
-    "no-unused-vars": [
-      "warn",
-      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
-    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "no-param-reassign": "error",
     "camelcase": "error",
     "no-duplicate-imports": "error",
