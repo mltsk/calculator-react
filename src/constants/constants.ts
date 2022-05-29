@@ -57,20 +57,6 @@ export const SPECIAL_KEYS: { [key: string]: string } = {
 export const binaryOperators: string[] = ['+', '-', '*', '/'];
 export const unaryOperators: string[] = ['√', '%'];
 export const allOperators: string[] = [...binaryOperators, ...unaryOperators];
-export const bodyNumberSymbols: string[] = [
-  '.',
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-];
-export const firstNumberSymbols: string[] = ['-', ...bodyNumberSymbols];
 export const bracket: string[] = ['(', ')'];
 
 interface IPriority {

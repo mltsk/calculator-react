@@ -2,8 +2,6 @@ import {
   binaryOperators,
   unaryOperators,
   bracket,
-  firstNumberSymbols,
-  bodyNumberSymbols,
 } from '../constants/constants';
 
 const tokenize = (expression: string): (string | number)[] => {
@@ -12,27 +10,27 @@ const tokenize = (expression: string): (string | number)[] => {
 
   for (let i = 0; i < fixedExpression.length; i += 1) {
     const prevChar = fixedExpression[i - 1];
-    const char = fixedExpression[i];
+    const token = fixedExpression[i];
 
     if (
-      binaryOperators.includes(char) &&
+      binaryOperators.includes(token) &&
       prevChar &&
       !binaryOperators.includes(prevChar)
     ) {
-      result.push(char);
-    } else if (unaryOperators.includes(char)) {
-      result.push(char);
-    } else if (bracket.includes(char)) {
-      result.push(char);
-    } else if (firstNumberSymbols.includes(char)) {
-      let figure = '';
+      result.push(token);
+    } else if (unaryOperators.includes(token)) {
+      result.push(token);
+    } else if (bracket.includes(token)) {
+      result.push(token);
+    } else {
+      let token = fixedExpression[i];
 
-      do {
-        figure += fixedExpression[i];
+      while (/^-?\d+\.?\d*$/.test(token + fixedExpression[i + 1])) {
+        token += fixedExpression[i + 1];
         i += 1;
-      } while (bodyNumberSymbols.includes(fixedExpression[i]));
-      i -= 1;
-      result.push(Number(figure));
+      }
+
+      result.push(Number(token));
     }
   }
 
