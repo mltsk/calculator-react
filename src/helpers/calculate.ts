@@ -1,9 +1,9 @@
 import Calculator from './Calculator';
 
-const calculate = (expression: (string | number)[]) => {
+const calculate = (tokens: (string | number)[]) => {
   const calculator = new Calculator();
 
-  return calculator.calculate(expression);
+  return calculator.calculate(tokens);
 };
 
 export default calculate;

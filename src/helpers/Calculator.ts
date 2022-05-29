@@ -45,9 +45,9 @@ class Calculator {
     this.numbersStack.push(result);
   }
 
-  public calculate(expression: (string | number)[]): number {
-    for (let i = 0; i < expression.length; i += 1) {
-      const char = expression[i];
+  public calculate(tokens: (string | number)[]): number {
+    for (let i = 0; i < tokens.length; i += 1) {
+      const char = tokens[i];
 
       if (char === '(') {
         this.operatorStack.push(char);
@@ -77,7 +77,7 @@ class Calculator {
         }
       }
 
-      if (i === expression.length - 1) {
+      if (i === tokens.length - 1) {
         while (this.operatorStack.length !== 0) {
           const result = this.executeOperation();
 

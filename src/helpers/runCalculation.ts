@@ -3,8 +3,8 @@ import formatNumber from './formatNumber';
 import tokenize from './tokenize';
 
 const runCalculation = (expression: string): string => {
-  const parsedExpression = tokenize(expression);
-  const calculationResult = calculate(parsedExpression);
+  const tokens = tokenize(expression);
+  const calculationResult = calculate(tokens);
   const formattedNumber = formatNumber(calculationResult);
 
   return String(formattedNumber);
