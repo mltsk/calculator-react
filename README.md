@@ -1,5 +1,11 @@
 # CALCULATOR ON REACT
 
+The calculator supports a mathematical expression consisting of the following operations: addition, subtraction, multiplication, division, square root extraction and percentage, as well as square brackets. 
+
+Implemented without using `eval`.
+
+__DEMO__: https://mltsk.github.io/calculator-react/
+
 ## Run
 
 ```sh
