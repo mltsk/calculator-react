@@ -10,7 +10,7 @@ const tokenize = (expression: string): (string | number)[] => {
 
   for (let i = 0; i < fixedExpression.length; i += 1) {
     const prevChar = fixedExpression[i - 1];
-    const token = fixedExpression[i];
+    let token = fixedExpression[i];
 
     if (
       binaryOperators.includes(token) &&
@@ -23,8 +23,6 @@ const tokenize = (expression: string): (string | number)[] => {
     } else if (bracket.includes(token)) {
       result.push(token);
     } else {
-      let token = fixedExpression[i];
-
       while (/^-?\d+\.?\d*$/.test(token + fixedExpression[i + 1])) {
         token += fixedExpression[i + 1];
         i += 1;
