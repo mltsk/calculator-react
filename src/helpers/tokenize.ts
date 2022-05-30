@@ -1,8 +1,4 @@
-import {
-  binaryOperators,
-  unaryOperators,
-  bracket,
-} from '../constants/constants';
+import { firstCharNumber, charBeforeNumber } from './../constants/constants';
 
 const tokenize = (expression: string): (string | number)[] => {
   const fixedExpression = expression.replaceAll(',', '.').replaceAll('x', '*');
@@ -13,22 +9,17 @@ const tokenize = (expression: string): (string | number)[] => {
     let token = fixedExpression[i];
 
     if (
-      binaryOperators.includes(token) &&
-      prevChar &&
-      !binaryOperators.includes(prevChar)
+      firstCharNumber.includes(token) &&
+      (i === 0 || charBeforeNumber.includes(prevChar))
     ) {
-      result.push(token);
-    } else if (unaryOperators.includes(token)) {
-      result.push(token);
-    } else if (bracket.includes(token)) {
-      result.push(token);
-    } else {
       while (/^-?\d+\.?\d*$/.test(token + fixedExpression[i + 1])) {
         token += fixedExpression[i + 1];
         i += 1;
       }
 
       result.push(Number(token));
+    } else {
+      result.push(token);
     }
   }
 
